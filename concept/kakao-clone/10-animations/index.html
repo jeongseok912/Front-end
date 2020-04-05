@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Animations</title>
+        <style>
+            /* transition, transform을 hover할 필요없이 계속 발생시키고 싶은 경우 애니메이션을 생성하면 된다. */
+            .box {
+                width: 500px;
+                height: 500px;
+                background: red;
+                font-size: xx-large;
+                transition: transform .5s ease-in-out;
+                animation: 1.5s scaleAndRotateSquare infinite ease-in-out; /* 1.5초 동안 애니메이션 호출, 반복은 무제한, 효과는 ease-in-out */
+            }
+            /* 키프레임 : 애니메이션 정의 */
+            @keyframes scaleAndRotateSquare {
+                /* from - to 애니메이션
+                from {
+                    transform: none;  트랜스포메이션 없음 
+                }
+                to {
+                    transform: rotate(1turn) scale(.5, .5);
+                }
+                */
+                /* stage별 애니메이션 */ 
+                0% {
+                    transform: none;
+                }
+                50% {
+                    transform: rotate(1turn) scale(.5, .5);
+                    color: white;
+                }
+                100% {
+                    transform: none;
+                    color: blue;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">11111111111111111</div>
+    </body>
+</html>

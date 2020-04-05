@@ -1,0 +1,29 @@
+<!DOCTYPE html> <!-- self-contained tag : 스스로 열고 닫는 태그, 태그 자체로 정보가 되는 태그 -->
+<html>
+    <head>
+        <!-- meta : 브라우저에 전달하는 정보 명시 -->
+        <meta charset="utf-8"> <!-- charset : Character encoding, 브라우저에게 이 문서가 어떤 character(언어)로 작성되었는지 알려줌 -->
+        <meta name="author" content="jskim"> <!-- key, value 쌍 형태인듯 -->
+        <meta name="description" content="Welcome to my Kakao Clone"> <!-- description - 검색 엔진에서 검색 시 간략하게 나오는 설명글 -->
+        <title>This is my title</title>
+    </head>
+    <!-- 
+        semantic tag : 의미가 있는 태그
+         - ex) title, header, section, footer, article 등
+        non-semantic tag : 아무 의미가 없는 태그
+         - ex) div(컨테이너, 박스 용도), span(텍스트를 위한 컨테이너)
+    -->
+    <body>
+        <section>
+            <header id="headerNumberOne" class="defaultHeader">
+                <h1>Title of a section</h1>
+            </header>
+        </section>
+
+        <div>
+            <header id="differentHeader" class="defaultHeader">
+                Title of the unknown container
+            </header>
+        </div>
+    </body>
+</html>

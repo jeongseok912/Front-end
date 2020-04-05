@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport", content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible", content="ie=edge">
+        <title>Flex</title>
+        <style>
+            /*
+            flex는 하위 element들의 레이아웃을 만드는 container.
+            flex container는 행열 레이아웃 container라고 생각하고, 하위 element들을 행열 레이아웃 단위로 조정할 수 있다.
+            즉, 부모 클래스를 flex container로 만들면, children 박스들에게 어디로 이동할지 일일히 명령할 필요없다.
+            부모 클래스에 한 번 명령하면 된다.
+            flex는 children 박스들을 통으로 제어하는 것
+            flex는 부모 박스에만 적용한다. children 박스는 건드리지도 않는다.
+
+
+            align-items : 수직 정렬
+            - center : 가운데 정렬
+            - flex-start : 위쪽 정렬
+            - flex-end : 아래쪽 정렬
+            
+            justify-content : 수평 정렬
+            - center : 가운데 정렬
+            - space-between : 같은 간격으로 정렬
+            - space-around : contents 뿐만 아니라 그 주변도 같은 간격으로 정렬
+            
+            * 위 align-items, justify-content는 flex-direction: row(deafult)일 때의 방향이고,
+              flex-direction: column으로 바꾸면 반대로 동작한다.
+            flex-direction : 방향 지정
+            - column : 하위 element들이 열로 배치
+            - row(default) : 행으로 배치
+            - row-reverse : 행으로 역순 배치
+
+            flex-wrap : flex container 내에 children 박스들의 라인을 한 라인 내에서 제어할지 라인을 내릴지 등을 조정
+            - wrap : 다음 라인으로 내린다. 화면 크기에 따라 라인이 늘어났다 줄어들었다 함. 즉, 폭을 유지하면서 라인을 내림.
+            - nowrap(default) : 한 라인에서만 children 박스들이 조정됨. 즉, 폭 무시하고 다 줄어들거나 늘어남
+            - wrap-reverse : 라인을 내리는데 역순으로 배치
+            */
+            html, body {
+                height: 100%;
+            }
+
+            .father {
+                display: flex;
+                justify-content: space-between; 
+                align-items: flex-start; 
+                flex-direction: row;
+                height: 100%;
+                flex-wrap: wrap-reverse;
+            }
+
+            .box {
+                background-color: red;
+                width: 200px;
+                height: 200px;
+                border: 1px solid black;
+
+                /* 박스에 적힌 숫자들을(즉, contents들을) 움직이기 위해 각각의 box들을 flex로 만들 수도 있음 */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="father">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <!-- 아래는 창 크기에 따라 flex가 어떻게 변하는지 보기 위해 추가 -->
+            <!-- flex container는 화면에 따라 크기가 조정되고, 조정된 크기 내에서 children 박스들의 크기가 또 알아서 자동 조절된다.-->
+            <div class="box">4</div>
+            <div class="box">5</div>
+            <div class="box">6</div>
+            <div class="box">7</div>
+            <div class="box">8</div>
+            <div class="box">9</div>
+            <div class="box">10</div>
+        </div>
+    </body>
+</html>

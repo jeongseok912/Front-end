@@ -1,0 +1,11 @@
+/* 
+css syntax는 selector 파트, property 파트로 구분됨
+
+selector (tag, id, class) {
+    property-name: value;
+}
+*/
+
+h1 {
+    background-color: red;
+}

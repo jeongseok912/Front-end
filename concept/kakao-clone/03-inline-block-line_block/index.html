@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport", content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible", content="ie=edge">
+        <title>Inline Example</title>
+        <style>
+            /* display 옵션 : inline vs block vs inline-block
+            
+            block, inline-block
+            - Block의 형태는 inline-block 또는 block 중 하나가 되어야 한다.
+              - F12 요소 검사 통해 보면 알 수 있음
+              - block : element 하나가 한 라인을 차지
+                - 옆에 아무 것도 위치하지 못함, 다른 element는 아래에 위치하게 됨 
+                - default
+              - inline-block : 한 라인에 여러 개의 element를 배치할 수 있음
+                - display: inline-block으로 설정
+
+            inline
+            - 폭, 높이 박스없이 서로 옆에 붙는 형태
+            - 박스의 모든 property 설정값을 지운다.
+            - contents의 폭, 높이만큼의 스타일만 적용된다(padding, margin 등의 설정은 안된다는 소리인듯).
+            - 즉, 박스 모델처럼 적용되는게 아니라 텍스트처럼 적용된다.
+            - 텍스트는 높이, 폭이 없다. contents의 길이만 존재한다.
+            - display: inline으로 설정
+
+            inline 같은 설정값을 원하면서 동시에 박스 형태를 유지하고 싶으면,
+            inline-block을 사용하면 됨. inline만 쓰면 박스는 사라짐.
+            */
+            .box {
+                background-color: red;
+                width: 200px;
+                height: 200px;
+                border: 2px solid black;
+                display: inline;
+            }
+        </style>
+    </head>
+    <body>
+        <span class="box">1</span>
+        <span class="box">1</span>
+        <span class="box">1</span>
+    </body>
+</html>

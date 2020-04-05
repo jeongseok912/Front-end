@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Transformations</title>
+        <!-- element들의 모양새를 바꾸는 효과
+        뒤집기, 비틀기, 크기 확대/축소, 회전 등 -->
+        <style>
+            .box {
+                width: 500px;
+                height: 500px;
+                background: red;
+                transition: transform .5s ease-in-out; /* transition + transform 형태
+                transform은 transition과 같이 쓸 수 있다
+                (ex. hover하면서 모양새가 변경) */
+            }
+            .box:hover {
+                /* transform: rotate(45deg); */
+                /* transform: rotate(1turn); */
+                transform: rotate(1turn) scale(.5, .5); /* 크기 축소 */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box"></div>
+    </body>
+</html>

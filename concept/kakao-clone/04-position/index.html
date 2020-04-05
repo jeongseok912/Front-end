@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport", content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible", content="ie=edge">
+        <title>Position</title>
+        <style>
+            /* 높이 100%, 마진 0, 패딩 0 주는 이유는 브라우저가 갖고있는 default 값 상쇄시키기 위함 */
+            body, html {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            /* 본문이 높이 400%, 배경이 빨강이라고 가정 */
+            body {
+                height: 400%;
+                background-color: red;
+            }
+            /* Position 옵션 : static / fixed */
+            
+            /*
+            static
+            - default
+            - 자기 자리에 그대로 있음
+            - 예를 들어 스크롤을 내리면 안보이게 됨
+
+            fixed
+            - 화면 움직임을 따르면서 고정되어 있음? 붕 떠서 고정되어 있음?
+            - element가 그 위치에 오버랩해서 고정
+            - 스크롤을 따라감
+            - fixed일 때는 상, 하, 좌, 우 간격 4가지 설정이 가능하다.
+              - static을 곂치게 할 수 있음
+              - 상, 하, 좌, 우 옵션 안 주면 다른 element와의 관계에 따라 아래 있거나 inline으로 있거나 한 듯
+            */
+            #boxOne {
+                height: 300px;
+                width: 300px;
+                background-color: yellow;
+                position: static;
+            }
+            #boxTwo {
+                height: 300px;
+                width: 300px;
+                background-color: green;
+                position: fixed;
+                /*top: 10px;*/
+                /*bottom: 10px;*/
+                /*right: 0;*/
+                left: 500px;
+            }
+
+            /*
+            absolute
+            - element가 부모 박스에 상대적으로 움직인다.
+            - 부모 박스로 설정할 element에 position: relative로 설정
+            - 부모 박스가 없을 시 문서 본문 body에 상대적으로 움직인다.
+
+            relative
+            - 하위 박스의 position이 부모 박스에 상대적으로 움직이도록 부모 박스라고 명시하는 거
+            - 부모 element인 .abs-box에 position: relative를 줌으로서 .abs-child 위치가 노란색 박스 영역 내(.abs-box 박스)에서 움직임
+            - 부모 element여도 position이 부모 element를 따라가기 위해서는 position: relative 옵션을 줘야하는 듯. 안주면 문서 본문 body에 상대적으로 움직임
+
+            relative-absolute는 관계를 맺는 옵션인 듯.
+            .abs-box는 부모 박스가 없으면 문서 본문 body에 맞춰서 position을 잡을거고,
+            반대로 부모 박스라고 relative position을 설정하면 child 박스는 그에 상대해서 absolute position을 잡는다.
+            */
+            .abs-box {
+                width: 400px;
+                height: 400px;
+                background-color: yellow;
+                position: relative;
+            }
+            .abs-child {
+                width: 100px;
+                height: 100px;
+                background-color: green;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="abs-box">
+            <div class="abs-child"></div>
+        </div>
+        <!-- static 
+        <div id="boxOne">
+            <div class="box-child"></div>
+        </div>
+        -->
+        <!-- fixed
+        <div id="boxTwo">
+            <div class="box-child"></div>
+        </div>
+        -->
+    </body>
+</html>

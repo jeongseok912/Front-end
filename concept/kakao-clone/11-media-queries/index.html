@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Media Queries</title>
+        <!-- 브라우저 사이즈를 잡아서 효과를 주는 법 -->
+        <style>
+            body {
+                background-color: green;
+            }
+            /* 반응형 웹, 모바일-데스크탑 환경에 따라 반응 
+             우리가 보는 화면 넓이가 최소 320 - 최대 640일 경우(나의 유저가 모바일 환경일 경우 ) blue로 표시하는 쿼리  */
+            @media screen and (min-width:320px) and (max-width:640px) {
+                body {
+                    background-color: blue;
+                }
+            }
+        </style>
+    </head>
+    <body>
+    </body>
+</html>

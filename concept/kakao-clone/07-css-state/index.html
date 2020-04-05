@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>CSS States</title>
+        <style>
+            .box {
+                background-color: red;
+                font-size: 40px;
+            }
+            /* hover : 마우스 올릴 때
+               active : 마우스로 눌렀을 때
+               focus : 마우스로 누르면 속성이 적용된 상태로 유지
+               visited : 
+             */
+            .box:hover {
+                background-color: pink;
+            }
+            .box:active {
+                background-color: green;
+            }
+            /* focus가 hover보다 중요하고 마지막 명령이기 때문에 핑크색으로 변하지 않음. hover 명령 무시됨 */
+            .box:focus {
+                background-color: blue;
+            }
+
+        </style>
+    </head>
+    <body>
+        <textarea class="box">lalalalala</textarea>
+    </body>
+</html>

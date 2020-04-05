@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Box Model</title>
+    <style>
+        /*
+        CSS Box Model
+        - Content < Padding < Border < Margin 순 박스로 구성됨
+        - Border(경계)를 기준으로 안쪽 간격(Padding), 바깥쪽 간격(Margin)을 조정
+        - 하위 element는 상위 element의 Content 영역에 종속되어 움직이는 듯?
+          - 상위 element의 padding-top을 늘리면, 하위 element의 padding-top도 늘어나는 느낌
+        */
+        body, html {
+            padding: 0;
+            margin: 0;
+            background-color: green;
+            height: 100%;
+        }
+        .box {
+            background-color: yellow;
+            width: 50%;
+            height: 50%;
+            padding: 20px 100px 10px 10px;  /* 시계 방향 - 상 우 하 좌 */
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+        .inside-box {
+            background-color: blue;
+            width: 50%;
+            height: 50%;
+            /*
+            border-width: 5px;
+            border-color: red; 
+            border-style: dashed;
+            */
+            border: 5px solid black; /* 폭 스타일 색상 순서 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="inside-box"></div>
+    </div>
+</body>
+</html>

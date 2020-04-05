@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Transitions</title>
+        <!-- state가 바뀔 때 변환 효과(애니메이션)를 주는 것
+        하나의 state에서 다른 state로 넘어갈 때의 효과
+        (ex. none → hover) -->
+        <style>
+            .box {
+                background-color: green;
+                color: white;
+                transition: background-color 0.5s ease-in-out; /* 배경색을 스르륵 0.5초안에 바꿔라.  */
+                transition: all 0.5s ease-in-out; /* all : 모든 속성에 적용, 즉 color: blue로 변경 시에도 적용 */
+            }
+            .box:hover {
+                background-color: red;
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <span class="box">Text</span>
+    </body>
+</html>
